@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_delivery_app/animations/ScaleRoute.dart';
+import 'package:mobile_delivery_app/pages/FoodDetailsPage.dart';
 
 class PopularFoodsWidget extends StatefulWidget {
   @override
