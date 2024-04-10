@@ -8,7 +8,7 @@ class FoodDetailsSlider extends StatelessWidget {
   String slideImage3;
 
   FoodDetailsSlider(
-      {
+      {super.key, 
       required this.slideImage1,
       required this.slideImage2,
       required this.slideImage3});
@@ -16,7 +16,7 @@ class FoodDetailsSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.only(left: 10, right: 10),
       child: Container(
           child: AnotherCarousel(
             images: [
@@ -40,7 +40,7 @@ class FoodDetailsSlider extends StatelessWidget {
             indicatorBgPadding: 5.0,
             dotBgColor: Colors.black54.withOpacity(0),
             borderRadius: true,
-            radius: Radius.circular(20),
+            radius: const Radius.circular(20),
             moveIndicatorFromBottom: 180.0,
             noRadiusForIndicator: true,
           )),

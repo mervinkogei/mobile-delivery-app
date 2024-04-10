@@ -9,6 +9,8 @@ import '../Widgets/SearchWidget.dart';
 import '../Widgets/TopMenus.dart';
 import '../animations/ScaleRoute.dart';
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -17,9 +19,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        title: Text(
+        title: const Text(
           "What would you like to eat?",
           style: TextStyle(
               color: Color(0xFF3a3737),
@@ -28,14 +30,14 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: <Widget>[
           IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.notifications_none,
                 color: Color(0xFF3a3737),
               ),
-              onPressed: () {Navigator.push(context, ScaleRoute(page: SignInPage()));})
+              onPressed: () {Navigator.push(context, ScaleRoute(page: const SignInPage()));})
         ], systemOverlayStyle: SystemUiOverlayStyle.dark,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: <Widget>[
             SearchWidget(),
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBarWidget(),
+      bottomNavigationBar: const BottomNavBarWidget(),
     );
   }
 }

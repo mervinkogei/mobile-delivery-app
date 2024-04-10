@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBarWidget extends StatefulWidget {
+  const BottomNavBarWidget({super.key});
+
   @override
   _BottomNavBarWidgetState createState() => _BottomNavBarWidgetState();
 }
@@ -9,17 +11,17 @@ class BottomNavBarWidget extends StatefulWidget {
 class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
-    void _onItemTapped(int index) {
+    int selectedIndex = 0;
+    void onItemTapped(int index) {
       setState(() {
-        _selectedIndex = index;
+        selectedIndex = index;
 //        navigateToScreens(index);
       });
     }
 
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      items:  <BottomNavigationBarItem>[
+      items:  const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label:
@@ -40,9 +42,9 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           label: 'Account',
         ),
       ],
-      currentIndex: _selectedIndex,
-      selectedItemColor: Color(0xFFfd5352),
-      onTap: _onItemTapped,
+      currentIndex: selectedIndex,
+      selectedItemColor: const Color(0xFFfd5352),
+      onTap: onItemTapped,
     );
   }
 }

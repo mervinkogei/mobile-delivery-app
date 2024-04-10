@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TopMenus extends StatefulWidget {
+  const TopMenus({super.key});
+
   @override
   _TopMenusState createState() => _TopMenusState();
 }
@@ -8,7 +10,7 @@ class TopMenus extends StatefulWidget {
 class _TopMenusState extends State<TopMenus> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -34,7 +36,7 @@ class TopMenuTiles extends StatelessWidget {
   String slug;
 
   TopMenuTiles(
-      {
+      {super.key, 
       required this.name,
       required this.imageUrl,
       required this.slug});
@@ -46,9 +48,9 @@ class TopMenuTiles extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(left: 10, right: 5, top: 5, bottom: 5),
-            decoration: new BoxDecoration(boxShadow: [
-              new BoxShadow(
+            padding: const EdgeInsets.only(left: 10, right: 5, top: 5, bottom: 5),
+            decoration: const BoxDecoration(boxShadow: [
+              BoxShadow(
                 color: Color(0xFFfae3e2),
                 blurRadius: 25.0,
                 offset: Offset(0.0, 0.75),
@@ -57,12 +59,12 @@ class TopMenuTiles extends StatelessWidget {
             child: Card(
                 color: Colors.white,
                 elevation: 0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: const BorderRadius.all(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(3.0),
                   ),
                 ),
-                child: Container(
+                child: SizedBox(
                   width: 50,
                   height: 50,
                   child: Center(
@@ -74,7 +76,7 @@ class TopMenuTiles extends StatelessWidget {
                 )),
           ),
           Text(name,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Color(0xFF6e6e71),
                   fontSize: 14,
                   fontWeight: FontWeight.w400)),

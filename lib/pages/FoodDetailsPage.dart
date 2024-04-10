@@ -4,6 +4,8 @@ import 'package:mobile_delivery_app/animations/ScaleRoute.dart';
 import 'package:mobile_delivery_app/pages/FoodOrderPage.dart';
 
 class FoodDetailsPage extends StatefulWidget {
+  const FoodDetailsPage({super.key});
+
   @override
   _FoodDetailsPageState createState() => _FoodDetailsPageState();
 }
@@ -16,10 +18,10 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Color(0xFFFAFAFA),
+          backgroundColor: const Color(0xFFFAFAFA),
           elevation: 0,
           leading: IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Color(0xFF3a3737),
             ),
@@ -27,17 +29,17 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
           ),
           actions: <Widget>[
             IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.business_center,
                   color: Color(0xFF3a3737),
                 ),
                 onPressed: () {
-                  Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
+                  Navigator.push(context, ScaleRoute(page: const FoodOrderPage()));
                 })
           ], systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         body: Container(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 15,
             right: 15,
           ),
@@ -47,14 +49,14 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
               Card(
                 semanticContainer: true,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Image.asset(
-                  'assets/images/bestfood/' + 'ic_best_food_8' + ".jpeg",
-                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3.0),
                 ),
                 elevation: 1,
-                margin: EdgeInsets.all(5),
+                margin: const EdgeInsets.all(5),
+                child: Image.asset(
+                  'assets/images/bestfood/' 'ic_best_food_8' ".jpeg",
+                ),
               ),
               /*  Container(
                 height: 150,
@@ -68,14 +70,14 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   productName: "Grilled Salmon",
                   productPrice: "\$96.00",
                   productHost: "pizza hut"),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              AddToCartMenu(),
-              SizedBox(
+              const AddToCartMenu(),
+              const SizedBox(
                 height: 15,
               ),
-              PreferredSize(
+              const PreferredSize(
                 preferredSize: Size.fromHeight(50.0),
                 child: TabBar(
                   labelColor: Color(0xFFfd3f40),
@@ -95,22 +97,22 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                   ], // list of tabs
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 150,
                 child: TabBarView(
                   children: [
                     Container(
                       color: Colors.white24,
-                      child: DetailContentMenu(),
+                      child: const DetailContentMenu(),
                     ),
                     Container(
                       color: Colors.white24,
-                      child: DetailContentMenu(),
+                      child: const DetailContentMenu(),
                     ), // class name
                   ],
                 ),
               ),
-              BottomMenu(),
+              const BottomMenu(),
             ],
           ),
         ),
@@ -125,7 +127,7 @@ class FoodTitleWidget extends StatelessWidget {
   String productPrice;
   String productHost;
 
-  FoodTitleWidget({
+  FoodTitleWidget({super.key, 
     required this.productName,
     required this.productPrice,
     required this.productHost,
@@ -140,26 +142,26 @@ class FoodTitleWidget extends StatelessWidget {
           children: <Widget>[
             Text(
               productName,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 20,
                   color: Color(0xFF3a3a3b),
                   fontWeight: FontWeight.w500),
             ),
             Text(
               productPrice,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 20,
                   color: Color(0xFF3a3a3b),
                   fontWeight: FontWeight.w500),
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Row(
           children: <Widget>[
-            Text(
+            const Text(
               "by ",
               style: TextStyle(
                   fontSize: 16,
@@ -168,7 +170,7 @@ class FoodTitleWidget extends StatelessWidget {
             ),
             Text(
               productHost,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16,
                   color: Color(0xFF1f1f1f),
                   fontWeight: FontWeight.w400),
@@ -181,9 +183,11 @@ class FoodTitleWidget extends StatelessWidget {
 }
 
 class BottomMenu extends StatelessWidget {
+  const BottomMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -271,6 +275,8 @@ class BottomMenu extends StatelessWidget {
 }
 
 class AddToCartMenu extends StatelessWidget {
+  const AddToCartMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -279,26 +285,26 @@ class AddToCartMenu extends StatelessWidget {
         children: <Widget>[
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.remove),
+            icon: const Icon(Icons.remove),
             color: Colors.black,
             iconSize: 30,
           ),
           InkWell(
             onTap: () {
-              Navigator.push(context, ScaleRoute(page: FoodOrderPage()));
+              Navigator.push(context, ScaleRoute(page: const FoodOrderPage()));
             },
             child: Container(
               width: 200.0,
               height: 45.0,
-              decoration: new BoxDecoration(
-                color: Color(0xFFfd2c2c),
+              decoration: BoxDecoration(
+                color: const Color(0xFFfd2c2c),
                 border: Border.all(color: Colors.white, width: 2.0),
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Add To Bag',
-                  style: new TextStyle(
+                  style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.white,
                       fontWeight: FontWeight.w400),
@@ -308,8 +314,8 @@ class AddToCartMenu extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.add),
-            color: Color(0xFFfd2c2c),
+            icon: const Icon(Icons.add),
+            color: const Color(0xFFfd2c2c),
             iconSize: 30,
           ),
         ],
@@ -319,10 +325,12 @@ class AddToCartMenu extends StatelessWidget {
 }
 
 class DetailContentMenu extends StatelessWidget {
+  const DetailContentMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
+      child: const Text(
         'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.',
         style: TextStyle(
             fontSize: 14.0,

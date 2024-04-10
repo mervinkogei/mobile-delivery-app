@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BestFoodWidget extends StatefulWidget {
+  const BestFoodWidget({super.key});
+
   @override
   _BestFoodWidgetState createState() => _BestFoodWidgetState();
 }
@@ -8,7 +10,7 @@ class BestFoodWidget extends StatefulWidget {
 class _BestFoodWidgetState extends State<BestFoodWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return const SizedBox(
       height: 400,
       width: double.infinity,
       child: Column(
@@ -24,11 +26,13 @@ class _BestFoodWidgetState extends State<BestFoodWidget> {
 }
 
 class BestFoodTitle extends StatelessWidget {
+  const BestFoodTitle({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-      child: Row(
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
@@ -54,7 +58,7 @@ class BestFoodTiles extends StatelessWidget {
   String slug;
 
   BestFoodTiles(
-      {
+      {super.key, 
       required this.name,
       required this.imageUrl,
       required this.rating,
@@ -70,8 +74,8 @@ class BestFoodTiles extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.only(left: 10, right: 5, top: 5, bottom: 5),
-            decoration: BoxDecoration(boxShadow: [
+            padding: const EdgeInsets.only(left: 10, right: 5, top: 5, bottom: 5),
+            decoration: const BoxDecoration(boxShadow: [
               /* BoxShadow(
                 color: Color(0xFFfae3e2),
                 blurRadius: 15.0,
@@ -81,14 +85,14 @@ class BestFoodTiles extends StatelessWidget {
             child: Card(
               semanticContainer: true,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Image.asset(
-                'assets/images/bestfood/' + imageUrl + ".jpeg",
-              ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
               elevation: 1,
-              margin: EdgeInsets.all(5),
+              margin: const EdgeInsets.all(5),
+              child: Image.asset(
+                'assets/images/bestfood/' + imageUrl + ".jpeg",
+              ),
             ),
           ),
         ],
@@ -98,6 +102,8 @@ class BestFoodTiles extends StatelessWidget {
 }
 
 class BestFoodList extends StatelessWidget {
+  const BestFoodList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView(
